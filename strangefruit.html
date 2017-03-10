@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>ETHN 2 Zine</title>
+
+ <style type="text/css">
+ body {
+  margin: 0;
+  background: #000; 
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
+
+#polina { 
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 33%;
+  margin:2rem;
+  float: right;
+  font-size: 1.2rem;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+#polina button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .3s background;
+}
+#polina button:hover { 
+   background: rgba(0,0,0,0.5);
+}
+
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background; 
+}
+a:hover{
+  background:rgba(0,0,0,0.9);
+}
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}</style>
+
+<script type="text/javascript">
+var vid = document.getElementById("bgvid");
+var pauseButton = document.querySelector("#polina button");
+
+
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+}
+
+function vidFade() {
+  vid.classList.add("stopfade");
+}
+
+vid.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+vid.pause();
+// to capture IE10
+vidFade();
+}); 
+
+
+pauseButton.addEventListener("click", function() {
+  vid.classList.toggle("stopfade");
+  if (vid.paused) {
+    vid.play();
+    pauseButton.innerHTML = "Pause";
+  } else {
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+  }
+})
+</script>
+
+<video poster="strangefruit.mov" id="bgvid" playsinline autoplay muted loop>
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+<source src="strangefruit.mov">
+<source src="strangefruit.mov" type="mv4">
+</video>
+<div id="polina">
+<h1>CATFISH BLUES TODAY</h1>
+<p> Black Lives Matter
+<p>
+<p>
+<iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A3fU4b0yA9xmovdfrSjKvMn" width="75%" height="100" frameborder="0" allowtransparency="true"></iframe> <br>
+
+"There are very few people who have an awareness of how widespread this terrorism and violence was, and the way it now shapes the geography of the United States. We’ve got majority black cities in Detroit, Chicago, large black populations in Oakland and Cleveland and Los Angeles and Boston, and other cities in the Northeast. And the African Americans in these communities did not come as immigrants looking for economic opportunities, they came as refugees, exiles from lands in the South where they were being terrorized. And those communities have particular needs we’ve never addressed, we’ve never talked about. We’ve got generational poverty in these cities and marginalization within black communities, and you cannot understand these present-day challenges without understanding the Great Migration, and the terror and violence that sent the African Americans to these cities where they’ve never really been afforded the care and assistance they needed to recover from the terror and trauma that were there." - Michael Goldfield, The Color of Politics.
+
+<br> 
+
+Since the circulation of Catfish Blues occurred during the time of the “migration” period in the early twentieth century, the experience of black Americans fleeing violence and terror of the south can be relationally analyzed with the present-day movements such as Black Lives Matter as a response to police brutality.  As discussed in lecture, the designation of the black body as a “criminal” or an “outlaw”, and not having a permanent home as a result of it originated out of anti-black sentiments.  Dennis Childs, the author of Slaves of the State discusses that there is a direct correlation between violence of anti-black terrorist groups and the prison industrial complex.  As lynchings decreased, deaths within the prison industrial complex and at the hands of the state have increased.  The movement Black Lives Matter is a response to this, and is also a form of wake work, humanizing and remembering those who are made by the state to be fungible commodities rather than human beings.  
+
+</p>
+<a href="index.html">original article</a> <a href="garyclarkjr.html">next page</a>  
+</div>
+
+
+</body>
+</html>
